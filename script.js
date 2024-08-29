@@ -17,7 +17,6 @@ async function getQuoteData() {
     }
 };
 
-// TODO - Add JS functionality to generate a new quote and clear existing one
 async function displayQuote() {
     try {
         if (quoteDataContainer.innerHTML === "") {
@@ -34,6 +33,7 @@ async function displayQuote() {
             quoteDiv.innerHTML = `<strong>Quote: </strong>"${quote.content}"`
             quoteDataContainer.appendChild(quoteDiv);
         } else {
+            alert('Press the "Clear Screen" button for another quote.')
             return;
         }
     } catch (error) {
@@ -48,6 +48,5 @@ newQuoteButton.addEventListener("click", () => {
 clearButton.addEventListener("click", () => {
     quoteDataContainer.innerHTML = "";
 })
-
 
 // EXTRA TODO? - Make ability to add favorite quotes to library? 
